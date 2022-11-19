@@ -5,11 +5,11 @@ from random import randint, choice
 class Player(pygame.sprite.Sprite):
 	def __init__(self):
 		super().__init__()
-		player_walk_1 = pygame.image.load('First pygame Project/graphics/Player/player_walk_1.png').convert_alpha()
-		player_walk_2 = pygame.image.load('First pygame Project/graphics/Player/player_walk_2.png').convert_alpha()
+		player_walk_1 = pygame.image.load('Desktop/Visual Studio Code Files\/First pygame Project/graphics/Player/player_walk_1.png').convert_alpha()
+		player_walk_2 = pygame.image.load('Desktop/Visual Studio Code Files/First pygame Project/graphics/Player/player_walk_2.png').convert_alpha()
 		self.player_walk = [player_walk_1,player_walk_2]
 		self.player_index = 0
-		self.player_jump = pygame.image.load('First pygame Project/graphics/Player/jump.png').convert_alpha()
+		self.player_jump = pygame.image.load('Desktop/Visual Studio Code Files/First pygame Project/graphics/Player/jump.png').convert_alpha()
 
 		self.image = self.player_walk[self.player_index]
 		self.rect = self.image.get_rect(midbottom = (80,300))
@@ -44,13 +44,13 @@ class Obstacle(pygame.sprite.Sprite):
 		super().__init__()
 		
 		if type == 'bee':
-			bee_1 = pygame.image.load('First pygame Project/graphics/Bee/bee1.png').convert_alpha()
-			bee_2 = pygame.image.load('First pygame Project/graphics/Bee/bee2.png').convert_alpha()
+			bee_1 = pygame.image.load('Desktop/Visual Studio Code Files/First pygame Project/graphics/Bee/bee1.png').convert_alpha()
+			bee_2 = pygame.image.load('Desktop/Visual Studio Code Files/First pygame Project/graphics/Bee/bee2.png').convert_alpha()
 			self.frames = [bee_1, bee_2]
 			y_pos = 250
 		else:
-			worm_1 = pygame.image.load('First pygame Project/graphics/Worm/worm1.png').convert_alpha()
-			worm_2 = pygame.image.load('First pygame Project/graphics/Worm/worm2.png').convert_alpha()
+			worm_1 = pygame.image.load('Desktop/Visual Studio Code Files/First pygame Project/graphics/Worm/worm1.png').convert_alpha()
+			worm_2 = pygame.image.load('Desktop/Visual Studio Code Files/First pygame Project/graphics/Worm/worm2.png').convert_alpha()
 			self.frames = [worm_1,worm_2]
 			y_pos  = 300
 
@@ -119,11 +119,11 @@ def player_animation():
 
 pygame.init()
 screen = pygame.display.set_mode((800,400))
-pygame.display.set_caption('Pink Run')
-iconImage = pygame.image.load("First pygame Project/graphics/icon.ico")
+pygame.display.set_caption('Pink Runnner')
+iconImage = pygame.image.load("Desktop/Visual Studio Code Files/First pygame Project/graphics/gameIcon.ico")
 pygame.display.set_icon(iconImage)
 clock = pygame.time.Clock()
-test_font = pygame.font.Font('First pygame Project/font/rexlia rg.otf', 30)
+test_font = pygame.font.Font("Desktop/Visual Studio Code Files/First pygame Project/font/rexlia rg.otf", 30)
 game_active = False
 start_time = 0
 score = 0
@@ -134,19 +134,19 @@ player.add(Player())
 
 obstacle_group = pygame.sprite.Group()
 
-sky_surface = pygame.image.load('First pygame Project/graphics/sky.png').convert()
-ground_surface = pygame.image.load('First pygame Project/graphics/ground.png').convert()
+sky_surface = pygame.image.load('Desktop/Visual Studio Code Files/First pygame Project/graphics/sky.png').convert()
+ground_surface = pygame.image.load('Desktop/Visual Studio Code Files/First pygame Project/graphics/ground.png').convert()
 
 # Worm 
-worm_frame_1 = pygame.image.load('First pygame Project/graphics/Worm/worm1.png').convert_alpha()
-worm_frame_2 = pygame.image.load('First pygame Project/graphics/Worm/worm2.png').convert_alpha()
+worm_frame_1 = pygame.image.load('Desktop/Visual Studio Code Files/First pygame Project/graphics/Worm/worm1.png').convert_alpha()
+worm_frame_2 = pygame.image.load('Desktop/Visual Studio Code Files/First pygame Project/graphics/Worm/worm2.png').convert_alpha()
 worm_frames = [worm_frame_1, worm_frame_2]
 worm_frame_index = 0
 worm_surf = worm_frames[worm_frame_index]
 
 # Bee
-bee_frame1 = pygame.image.load('First pygame Project/graphics/Bee/bee1.png').convert_alpha()
-bee_frame2 = pygame.image.load('First pygame Project/graphics/Bee/bee2.png').convert_alpha()
+bee_frame1 = pygame.image.load('Desktop/Visual Studio Code Files/First pygame Project/graphics/Bee/bee1.png').convert_alpha()
+bee_frame2 = pygame.image.load('Desktop/Visual Studio Code Files/First pygame Project/graphics/Bee/bee2.png').convert_alpha()
 bee_frames = [bee_frame1, bee_frame2]
 bee_frame_index = 0
 bee_surf = bee_frames[bee_frame_index]
@@ -154,22 +154,22 @@ bee_surf = bee_frames[bee_frame_index]
 obstacle_rect_list = []
 
 
-player_walk_1 = pygame.image.load('First pygame Project/graphics/player/player_walk_1.png').convert_alpha()
-player_walk_2 = pygame.image.load('First pygame Project/graphics/player/player_walk_2.png').convert_alpha()
+player_walk_1 = pygame.image.load('Desktop/Visual Studio Code Files/First pygame Project/graphics/player/player_walk_1.png').convert_alpha()
+player_walk_2 = pygame.image.load('Desktop/Visual Studio Code Files/First pygame Project/graphics/player/player_walk_2.png').convert_alpha()
 player_walk = [player_walk_1,player_walk_2]
 player_index = 0
-player_jump = pygame.image.load('First pygame Project/graphics/player/jump.png').convert_alpha()
+player_jump = pygame.image.load('Desktop/Visual Studio Code Files/First pygame Project/graphics/player/jump.png').convert_alpha()
 
 player_surf = player_walk[player_index]
 player_rect = player_surf.get_rect(midbottom = (80,300))
 player_gravity = 0
 
 # Intro screen
-player_stand = pygame.image.load('First pygame Project/graphics/player/player_stand.png').convert_alpha()
+player_stand = pygame.image.load('Desktop/Visual Studio Code Files/First pygame Project/graphics/player/player_stand.png').convert_alpha()
 player_stand = pygame.transform.rotozoom(player_stand, 0, 1.75)
 player_stand_rect = player_stand.get_rect(center = (400,200))
 
-game_name = test_font.render('Pixel Runner',False,(252, 246, 245))
+game_name = test_font.render('Pink Runner',False,(252, 246, 245))
 game_name_rect = game_name.get_rect(center = (400,80))
 
 game_message = test_font.render('Press space to run',False,(252, 246, 245))
@@ -177,13 +177,13 @@ game_message_rect = game_message.get_rect(center = (400,330))
 
 # Timer 
 obstacle_timer = pygame.USEREVENT + 1
-pygame.time.set_timer(obstacle_timer,1500)
+pygame.time.set_timer(obstacle_timer,1000)
 
 worm_animation_timer = pygame.USEREVENT + 2
-pygame.time.set_timer(worm_animation_timer,500)
+pygame.time.set_timer(worm_animation_timer,400)
 
 bee_animation_timer = pygame.USEREVENT + 3
-pygame.time.set_timer(bee_animation_timer,200)
+pygame.time.set_timer(bee_animation_timer,100)
 
 while True:
 	for event in pygame.event.get():
